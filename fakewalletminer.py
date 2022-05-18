@@ -4,7 +4,6 @@ import contextlib
 import random
 import secrets
 import requests
-import json
 from colorama import Fore
 from tqdm import tqdm
 
@@ -46,25 +45,25 @@ def searchWallet():
         
 
 if __name__ == "__main__":
-    print(f"""
-    {Fore.RED}
-    ______    _          _    _       _ _      _    ___  ___                
-    |  ___|  | |        | |  | |     | | |    | |   |  \/  |                
-    | |_ __ _| | _____  | |  | | __ _| | | ___| |_  | .  . |_ _ __   ___ _ __ 
-    |  _/ _` | |/ / _ \ | |/\| |/ _` | | |/ _ \ __| | |\/| | | '_ \ / _ \ '__|
-    | || (_| |   <  __/ \  /\  / (_| | | |  __/ |_  | |  | | | | | |  __/ |   
-    \_| \__,_|_|\_\___|  \/  \/ \__,_|_|_|\___|\__| \_|  |_/_|_| |_|\___|_|   {Fore.RESET}
-    """)
-
-    print(f"{Fore.RED} ----------------------------------------------------------------------------- {Fore.RESET}")
-    start = input("Do you want to start the mining? (y/n)\n")
-
-    if start not in ["y", "yes"]:
-        print(f"{Fore.RED} Exiting the Wallet miner... {Fore.RESET}")
-        time.sleep(3)
-        exit()
-
-    printProgressBar()
-
     with contextlib.suppress(KeyboardInterrupt):
+        print(f"""
+        {Fore.RED}
+        ______    _          _    _       _ _      _    ___  ___                
+        |  ___|  | |        | |  | |     | | |    | |   |  \/  |                
+        | |_ __ _| | _____  | |  | | __ _| | | ___| |_  | .  . |_ _ __   ___ _ __ 
+        |  _/ _` | |/ / _ \ | |/\| |/ _` | | |/ _ \ __| | |\/| | | '_ \ / _ \ '__|
+        | || (_| |   <  __/ \  /\  / (_| | | |  __/ |_  | |  | | | | | |  __/ |   
+        \_| \__,_|_|\_\___|  \/  \/ \__,_|_|_|\___|\__| \_|  |_/_|_| |_|\___|_|   {Fore.RESET}
+        """)
+
+        print(f"{Fore.RED} ----------------------------------------------------------------------------- {Fore.RESET}")
+        start = input("Do you want to start the mining? (y/n)\n")
+
+        if start not in ["y", "yes"]:
+            print(f"{Fore.RED} Exiting the Wallet miner... {Fore.RESET}")
+            time.sleep(3)
+            exit()
+
+        printProgressBar()
+
         searchWallet()
